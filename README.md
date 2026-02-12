@@ -1,6 +1,6 @@
-# React Landing Page
+# MiniPupperWorkshop 2026
 
-This is a simple React landing page project that includes multiple pages and a structured layout. The project consists of the following pages: Home, Registration, Program, Directions, and Resources, along with a Header and Footer.
+for minipupper workshop IEEE Region 1+2.
 
 ## Project Structure
 
@@ -61,7 +61,7 @@ npm start
 ```
 This will launch the application in your default web browser at `http://localhost:3000`.
 
-## Contributing
+
 
 Feel free to fork the repository and submit pull requests for any improvements or features you would like to add.
 
