@@ -5,33 +5,7 @@ const Registration = () => {
         window.location.href = '#'; // Placeholder - update with actual vTools URL
     };
 
-    const scheduleItems = [
-        {
-            time: '9:30am',
-            title: 'Registration',
-            description: 'Check in, pick up your name badge, and grab a coffee before the workshop begins.'
-        },
-        {
-            time: '10:00am',
-            title: 'Workshop',
-            description: 'Dr. Li Bai, Temple University | In this hands-on session, participants will explore cloud-based systems and integrate advanced AI tools, including generative AI, to develop and control robotic applications using the quadruped Mini Pupper. Participants will program the robot to follow a line and perform dance routines synced to music of their choice.'
-        },
-        {
-            time: '12:00pm',
-            title: 'Lunch Provided',
-            description: ''
-        },
-        {
-            time: '1:00pm',
-            title: 'Robot Demonstrations',
-            description: 'All Participants | Showcase what you\'ve built during the workshop. Teams will demonstrate their Mini Pupper line-following and dance routines. This is a fun, engaging session designed to spark interest in robotic programming.'
-        },
-        {
-            time: '2:00pm',
-            title: 'Adjourn',
-            description: 'Thank you for attending! Safe travels.'
-        }
-    ];
+
 
     return (
         <div>
@@ -63,24 +37,7 @@ const Registration = () => {
                 </div>
             </section>
 
-            <section className="py-16 px-4 bg-gray-50">
-                <div className="container max-w-4xl mx-auto">
-                    <h2 className="text-3xl font-bold mb-8">Workshop Program — May 2, 2026</h2>
-                    <div className="space-y-4">
-                        {scheduleItems.map((item, idx) => (
-                            <div key={idx} className="card border-l-4 border-blue-600">
-                                <div className="flex gap-6">
-                                    <div className="text-blue-600 font-bold text-lg min-w-fit">{item.time}</div>
-                                    <div className="flex-1">
-                                        <h4 className="text-xl font-bold mb-2">{item.title}</h4>
-                                        {item.description && <p className="text-gray-700">{item.description}</p>}
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+
 
             <section className="py-16 px-4">
                 <div className="container max-w-4xl mx-auto">
