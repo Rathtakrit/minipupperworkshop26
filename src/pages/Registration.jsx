@@ -2,7 +2,7 @@ import React from 'react';
 
 const Registration = () => {
     const handleRegister = () => {
-        window.location.href = '#'; // Placeholder - update with actual vTools URL
+        window.location.href = 'https://events.vtools.ieee.org/m/538617'; 
     };
 
 
@@ -36,8 +36,6 @@ const Registration = () => {
                     </div>
                 </div>
             </section>
-
-
 
             <section className="py-16 px-4">
                 <div className="container max-w-4xl mx-auto">
@@ -84,7 +82,7 @@ const Registration = () => {
                 <div className="container max-w-4xl mx-auto">
                     <h2 className="text-3xl font-bold mb-8">Funding & Travel Support</h2>
                     <div className="card">
-                        <p className="text-gray-700 mb-4">We will select 20–30 faculty advisors from IEEE Region 1 and Region 2 to participate in this workshop. Selected advisors must demonstrate to their Section Chairs a commitment to increase student membership in their student branch and a willingness to conduct outreach of AI technologies to their local schools, with the support of their department chairs.</p>
+                        <p className="text-gray-700 mb-4">We will select <strong>20–30 faculty advisors from IEEE Region 1 and Region 2</strong>  to participate in this workshop. Selected advisors must demonstrate to their Section Chairs a commitment to increase student membership in their student branch and a willingness to conduct outreach of AI technologies to their local schools, with the support of their department chairs.</p>
                         <p className="text-gray-700 mb-4">Once your registration is approved with the support of your local IEEE Section Chair and department chair, the IEEE Region 1 & Region 2 Strategic Initiative Fund will cover your hotel accommodations and meals at the workshop location.</p>
                         <p className="text-gray-700 mb-4">Travel to and from the workshop (airfare, mileage, train, etc.) is the responsibility of each attendee. Faculty advisors are encouraged to seek travel support from their local IEEE Section and their respective department chairs to cover transportation costs from home to the workshop location in Philadelphia.</p>
                         <p className="text-gray-700">We recommend reaching out to your local Section and department early, as funding approval processes may take time. If you need a formal invitation letter or supporting documentation for your funding request, please contact the organizing committee.</p>

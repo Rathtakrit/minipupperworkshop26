@@ -5,24 +5,25 @@ const Footer = () => {
         <footer className="bg-gray-900 text-gray-200 mt-20 py-12">
             <div className="container mx-auto max-w-7xl px-4">
                 <div className="mb-8">
-                    <h3 className="text-white font-bold text-lg mb-6">Workshop Highlights</h3>
+                    <h3 className="text-white font-bold text-lg mb-6">Organizers</h3>
+                    <p className="text-white font-bold text-lg mb-6">This workshop is organized in collaboration with MangDang and the IEEE R1/R2 Student Activities Committee. For questions or more information, please contact the organizing committee</p>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div className="bg-gray-800 rounded-lg overflow-hidden">
-                            <img src="/images/workshop-1.jpg" alt="Workshop moment 1" className="w-full h-48 object-cover" />
+                            <img src="/images/ieee-logo.png" alt="IEEE-logo" className="w-full h-48 object-cover" />
                             <div className="p-4">
-                                <p className="text-sm text-gray-300 text-center">Workshop Experience</p>
+                                <p className="text-sm text-gray-300 text-center">IEEE</p>
                             </div>
                         </div>
                         <div className="bg-gray-800 rounded-lg overflow-hidden">
-                            <img src="/images/workshop-2.jpg" alt="Workshop moment 2" className="w-full h-48 object-cover" />
+                            <img src="/mangdang-logo.png" alt="mangdang-logo" className="w-full h-48 object-cover" />
                             <div className="p-4">
-                                <p className="text-sm text-gray-300 text-center">Mini Pupper Demo</p>
+                                <p className="text-sm text-gray-300 text-center">MangDang</p>
                             </div>
                         </div>
                         <div className="bg-gray-800 rounded-lg overflow-hidden">
-                            <img src="/images/workshop-3.jpg" alt="Workshop moment 3" className="w-full h-48 object-cover" />
+                            <img src="/images/ieee-r1r2-better-together.jpg" alt="region1-2-logo" className="w-full h-48 object-cover" />
                             <div className="p-4">
-                                <p className="text-sm text-gray-300 text-center">Team Collaboration</p>
+                                <p className="text-sm text-gray-300 text-center">Region 1+2</p>
                             </div>
                         </div>
                     </div>
