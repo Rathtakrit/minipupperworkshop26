@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/minipupperworkshop26/static/css/main.8e52e997.chunk.css",
+    "main.js": "/minipupperworkshop26/static/js/main.7026e167.chunk.js",
+    "main.js.map": "/minipupperworkshop26/static/js/main.7026e167.chunk.js.map",
+    "runtime-main.js": "/minipupperworkshop26/static/js/runtime-main.e2881ff0.js",
+    "runtime-main.js.map": "/minipupperworkshop26/static/js/runtime-main.e2881ff0.js.map",
+    "static/js/2.b7e2d6c6.chunk.js": "/minipupperworkshop26/static/js/2.b7e2d6c6.chunk.js",
+    "static/js/2.b7e2d6c6.chunk.js.map": "/minipupperworkshop26/static/js/2.b7e2d6c6.chunk.js.map",
+    "index.html": "/minipupperworkshop26/index.html",
+    "static/css/main.8e52e997.chunk.css.map": "/minipupperworkshop26/static/css/main.8e52e997.chunk.css.map",
+    "static/js/2.b7e2d6c6.chunk.js.LICENSE.txt": "/minipupperworkshop26/static/js/2.b7e2d6c6.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e2881ff0.js",
+    "static/js/2.b7e2d6c6.chunk.js",
+    "static/css/main.8e52e997.chunk.css",
+    "static/js/main.7026e167.chunk.js"
+  ]
+}
