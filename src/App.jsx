@@ -11,7 +11,7 @@ import './styles/globals.css';
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/minipupperworkshop26">
       <div>
         <Header />
         <Switch>
