@@ -1,52 +1,25 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-header {
-    background: #007bff;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
+@layer components {
+    .btn-primary {
+        @apply px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium;
+    }
 
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
+    .btn-secondary {
+        @apply px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors font-medium;
+    }
 
-nav {
-    margin: 20px 0;
-}
+    .input-field {
+        @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent;
+    }
 
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #007bff;
-}
+    .card {
+        @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow;
+    }
 
-nav a:hover {
-    text-decoration: underline;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-h1, h2, h3 {
-    margin: 20px 0;
-}
-
-p {
-    line-height: 1.6;
+    .container {
+        @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
 }

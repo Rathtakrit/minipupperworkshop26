@@ -1,20 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Header.css'; // Assuming you may want to add styles for the header
 
 const Header = () => {
     return (
-        <header>
-            <h1>Landing Page Title</h1>
-            <nav>
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/registration">Registration</Link></li>
-                    <li><Link to="/program">Program</Link></li>
-                    <li><Link to="/directions">Directions</Link></li>
-                    <li><Link to="/resources">Resources</Link></li>
-                </ul>
-            </nav>
+        <header className="bg-blue-600 text-white shadow-lg sticky top-0 z-50">
+            <div className="container flex items-center justify-between h-20">
+                <h1 className="text-3xl font-bold">MiniPupper Workshop</h1>
+                <nav className="hidden md:block">
+                    <ul className="flex gap-8">
+                        <li><Link to="/" className="hover:text-blue-200 transition-colors">Home</Link></li>
+                        <li><Link to="/program" className="hover:text-blue-200 transition-colors">Program</Link></li>
+                        <li><Link to="/directions" className="hover:text-blue-200 transition-colors">Directions</Link></li>
+                        <li><Link to="/resources" className="hover:text-blue-200 transition-colors">Resources</Link></li>
+                        <li><Link to="/registration" className="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Register</Link></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
     );
 };
