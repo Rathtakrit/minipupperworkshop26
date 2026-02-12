@@ -38,7 +38,7 @@ const Home = () => {
                         </div>
                         <div className="bg-white p-6 rounded-lg shadow-md text-center">
                             <img
-                                src="/images/mini-pupper-2.jpg"
+                                src={`${process.env.PUBLIC_URL}/images/mini-pupper-2.jpg`}
                                 alt="Mini Pupper 2 robot"
                                 className="w-full h-64 object-cover rounded-lg"
                             />
@@ -92,7 +92,7 @@ const Home = () => {
                 <div className="container max-w-2xl mx-auto text-center">
                     <h2 className="text-3xl font-bold mb-6">Speaker</h2>
                     <img
-                        src="/images/dr-li-bai.jpg"
+                        src={`${process.env.PUBLIC_URL}/images/dr-li-bai.jpg`}
                         alt="Dr. Li Bai"
                         className="w-40 h-40 rounded-full mx-auto mb-6 object-cover"
                     />

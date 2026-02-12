@@ -19,7 +19,7 @@ const Directions = () => {
                     <div className="space-y-4 text-gray-700">
                         <div>
                         <img 
-                            src="/images/agh-exterior.jpg" 
+                            src={`${process.env.PUBLIC_URL}/images/agh-exterior.jpg`} 
                             alt="Amy Gutmann Hall Exterior" 
                             className="rounded-lg w-full mb-4 height-48 object-cover"
                         />
