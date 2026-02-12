@@ -2,67 +2,135 @@ import React from 'react';
 
 const Registration = () => {
     const handleRegister = () => {
-        // Replace with your actual registration URL (Google Form, Typeform, etc.)
-        window.location.href = 'https://forms.google.com/YOUR_FORM_ID';
+        window.location.href = '#'; // Placeholder - update with actual vTools URL
     };
+
+    const scheduleItems = [
+        {
+            time: '9:30am',
+            title: 'Registration',
+            description: 'Check in, pick up your name badge, and grab a coffee before the workshop begins.'
+        },
+        {
+            time: '10:00am',
+            title: 'Workshop',
+            description: 'Dr. Li Bai, Temple University | In this hands-on session, participants will explore cloud-based systems and integrate advanced AI tools, including generative AI, to develop and control robotic applications using the quadruped Mini Pupper. Participants will program the robot to follow a line and perform dance routines synced to music of their choice.'
+        },
+        {
+            time: '12:00pm',
+            title: 'Lunch Provided',
+            description: ''
+        },
+        {
+            time: '1:00pm',
+            title: 'Robot Demonstrations',
+            description: 'All Participants | Showcase what you\'ve built during the workshop. Teams will demonstrate their Mini Pupper line-following and dance routines. This is a fun, engaging session designed to spark interest in robotic programming.'
+        },
+        {
+            time: '2:00pm',
+            title: 'Adjourn',
+            description: 'Thank you for attending! Safe travels.'
+        }
+    ];
 
     return (
         <div>
             <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16 px-4">
-                <div className="container max-w-2xl mx-auto">
-                    <h1 className="text-4xl font-bold mb-4">Register for the Workshop</h1>
-                    <p className="text-xl">Secure your spot in our exclusive 4-day robotics workshop</p>
+                <div className="container max-w-4xl mx-auto">
+                    <h1 className="text-4xl font-bold mb-4">Registration</h1>
+                    <p className="text-xl">Join us for the IEEE Mini Pupper Workshop</p>
                 </div>
             </div>
 
             <section className="py-16 px-4">
-                <div className="container max-w-2xl mx-auto">
-                    <div className="bg-white rounded-lg shadow-lg p-8">
-                        <div className="text-center mb-8">
-                            <h2 className="text-2xl font-bold mb-4">Ready to Join Us?</h2>
-                            <p className="text-gray-700 mb-6">Click the button below to complete your registration. Limited spots available!</p>
-                        </div>
+                <div className="container max-w-4xl mx-auto">
+                    <div className="prose max-w-none mb-12">
+                        <h2 className="text-3xl font-bold mb-4">About This Workshop</h2>
+                        <p className="text-lg text-gray-700 mb-4">Registration for the Mini Pupper Workshop is open to all IEEE student branch faculty advisors in Regions 1 and 2. Space is limited, so please register early to secure your spot.</p>
+                    </div>
 
-                        <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-8 mb-8">
-                            <h3 className="text-lg font-semibold mb-4 text-blue-600">What's Included:</h3>
-                            <ul className="space-y-3">
-                                <li className="flex items-start gap-3">
-                                    <span className="text-blue-600 font-bold">✓</span>
-                                    <span>MiniPupper robot kit</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <span className="text-blue-600 font-bold">✓</span>
-                                    <span>4 days of hands-on training</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <span className="text-blue-600 font-bold">✓</span>
-                                    <span>Expert mentorship & guidance</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <span className="text-blue-600 font-bold">✓</span>
-                                    <span>Meals & refreshments</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <span className="text-blue-600 font-bold">✓</span>
-                                    <span>Certificate of completion</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <span className="text-blue-600 font-bold">✓</span>
-                                    <span>Access to exclusive resources</span>
-                                </li>
-                            </ul>
-                        </div>
-
+                    <div className="card mb-8">
+                        <h3 className="text-2xl font-bold mb-4">How to Register</h3>
+                        <p className="text-gray-700 mb-6">Registration is handled through IEEE vTools. To register, you will need the support of your local IEEE Section Chair and your department chair. Please secure their approval before submitting your registration.</p>
                         <button 
                             onClick={handleRegister}
-                            className="w-full px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-bold text-lg"
+                            className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-bold text-lg mb-4"
                         >
-                            Register Now
+                            Click here to register via IEEE vTools
                         </button>
+                        <p className="text-gray-700">Once your registration is supported and approved, your local workshop arrangements — including hotel accommodations and meals — will be covered by the IEEE Region 1 and Region 2 Strategic Initiative Fund.</p>
+                    </div>
+                </div>
+            </section>
 
-                        <p className="text-center text-sm text-gray-600 mt-6">
-                            Questions? Email us at <a href="mailto:support@minipupper.com" className="text-blue-600 hover:underline">support@minipupper.com</a>
-                        </p>
+            <section className="py-16 px-4 bg-gray-50">
+                <div className="container max-w-4xl mx-auto">
+                    <h2 className="text-3xl font-bold mb-8">Workshop Program — May 2, 2026</h2>
+                    <div className="space-y-4">
+                        {scheduleItems.map((item, idx) => (
+                            <div key={idx} className="card border-l-4 border-blue-600">
+                                <div className="flex gap-6">
+                                    <div className="text-blue-600 font-bold text-lg min-w-fit">{item.time}</div>
+                                    <div className="flex-1">
+                                        <h4 className="text-xl font-bold mb-2">{item.title}</h4>
+                                        {item.description && <p className="text-gray-700">{item.description}</p>}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className="py-16 px-4">
+                <div className="container max-w-4xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="card">
+                            <h3 className="text-2xl font-bold mb-6">What to Bring</h3>
+                            <ul className="space-y-3 text-gray-700">
+                                <li className="flex items-start gap-3">
+                                    <span className="text-blue-600 font-bold">•</span>
+                                    <span>A laptop with Windows 10 or 11</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <span className="text-blue-600 font-bold">•</span>
+                                    <span>Your enthusiasm for robotics!</span>
+                                </li>
+                            </ul>
+                            <div className="mt-6 pt-6 border-t border-gray-300">
+                                <p className="text-sm text-gray-600"><strong>Note:</strong> Mini Pupper robotics kits will be provided onsite for the hands-on sessions. Detailed setup instructions will be sent after registration.</p>
+                            </div>
+                        </div>
+
+                        <div className="card">
+                            <h3 className="text-2xl font-bold mb-6">Important Dates</h3>
+                            <div className="space-y-4">
+                                <div>
+                                    <p className="text-blue-600 font-bold">Registration Deadline</p>
+                                    <p className="text-lg font-semibold">April 18, 2026</p>
+                                </div>
+                                <div>
+                                    <p className="text-blue-600 font-bold">Workshop Date</p>
+                                    <p className="text-lg font-semibold">May 2, 2026</p>
+                                </div>
+                                <div>
+                                    <p className="text-blue-600 font-bold">Confirmation Emails Sent By</p>
+                                    <p className="text-lg font-semibold">April 21, 2026</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="py-16 px-4 bg-blue-50">
+                <div className="container max-w-4xl mx-auto">
+                    <h2 className="text-3xl font-bold mb-8">Funding & Travel Support</h2>
+                    <div className="card">
+                        <p className="text-gray-700 mb-4">We will select 20–30 faculty advisors from IEEE Region 1 and Region 2 to participate in this workshop. Selected advisors must demonstrate to their Section Chairs a commitment to increase student membership in their student branch and a willingness to conduct outreach of AI technologies to their local schools, with the support of their department chairs.</p>
+                        <p className="text-gray-700 mb-4">Once your registration is approved with the support of your local IEEE Section Chair and department chair, the IEEE Region 1 & Region 2 Strategic Initiative Fund will cover your hotel accommodations and meals at the workshop location.</p>
+                        <p className="text-gray-700 mb-4">Travel to and from the workshop (airfare, mileage, train, etc.) is the responsibility of each attendee. Faculty advisors are encouraged to seek travel support from their local IEEE Section and their respective department chairs to cover transportation costs from home to the workshop location in Philadelphia.</p>
+                        <p className="text-gray-700">We recommend reaching out to your local Section and department early, as funding approval processes may take time. If you need a formal invitation letter or supporting documentation for your funding request, please contact the organizing committee.</p>
                     </div>
                 </div>
             </section>
