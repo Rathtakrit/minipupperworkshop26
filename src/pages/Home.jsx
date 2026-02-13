@@ -1,17 +1,102 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [touchStart, setTouchStart] = useState(0);
+    const [touchEnd, setTouchEnd] = useState(0);
+
+    const heroImages = [
+        `${process.env.PUBLIC_URL}/images/Past-IEEE-1.jpg`,
+        `${process.env.PUBLIC_URL}/images/Past-IEEE-2.jpg`,
+        `${process.env.PUBLIC_URL}/images/Past-IEEE-3.jpg`,
+        `${process.env.PUBLIC_URL}/images/Past-IEEE-4.jpg`,
+    ];
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+        }, 5000);
+        return () => clearInterval(interval);
+    }, [heroImages.length]);
+
+    const handlePrev = () => {
+        setCurrentImageIndex((prev) => (prev - 1 + heroImages.length) % heroImages.length);
+    };
+
+    const handleNext = () => {
+        setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    };
+
+    const handleTouchStart = (e) => {
+        setTouchStart(e.targetTouches[0].clientX);
+    };
+
+    const handleTouchEnd = (e) => {
+        setTouchEnd(e.changedTouches[0].clientX);
+        if (touchStart - e.changedTouches[0].clientX > 50) {
+            handleNext();
+        }
+        if (e.changedTouches[0].clientX - touchStart > 50) {
+            handlePrev();
+        }
+    };
+
     return (
         <div>
-            <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20 px-4">
-                <div className="container max-w-4xl mx-auto text-center">
-                    <h1 className="text-5xl font-bold mb-3">Mini Pupper Robotics Workshop</h1>
-                    <p className="text-2xl mb-2">May 2, 2026 | Amy Gutmann Hall, University of Pennsylvania</p>
-                    <p className="text-xl mb-8 opacity-90">Cloud-Based Robotics & AI Integration for IEEE Faculty Advisors</p>
-                    <div className="flex gap-4 justify-center flex-wrap">
-                        <Link to="/registration" className="px-6 py-3 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition-colors font-bold">Register Now</Link>
-                        <Link to="/program" className="px-6 py-3 bg-blue-400 text-white rounded-lg hover:bg-blue-500 transition-colors font-bold">View Program</Link>
+            <section 
+                className="hero-gradient text-white py-12 md:py-20 px-4 min-h-screen md:min-h-auto flex items-center bg-cover bg-center relative overflow-hidden"
+                style={{
+                    backgroundImage: `url(${heroImages[currentImageIndex]})`,
+                    backgroundAttachment: 'fixed',
+                    transition: 'background-image 0.5s ease-in-out'
+                }}
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+            >
+                <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                
+                {/* Navigation Buttons */}
+                <button
+                    onClick={handlePrev}
+                    className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 z-20 bg-white bg-opacity-30 hover:bg-opacity-50 text-white p-2 md:p-3 rounded-full transition-all duration-300"
+                    aria-label="Previous image"
+                >
+                    <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button
+                    onClick={handleNext}
+                    className="absolute right-4 md:right-8 top-1/2 transform -translate-y-1/2 z-20 bg-white bg-opacity-30 hover:bg-opacity-50 text-white p-2 md:p-3 rounded-full transition-all duration-300"
+                    aria-label="Next image"
+                >
+                    <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+
+                {/* Image Indicators */}
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-2">
+                    {heroImages.map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => setCurrentImageIndex(index)}
+                            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                                index === currentImageIndex ? 'bg-white w-8' : 'bg-white bg-opacity-50 hover:bg-opacity-75'
+                            }`}
+                            aria-label={`Go to image ${index + 1}`}
+                        />
+                    ))}
+                </div>
+
+                <div className="container max-w-4xl mx-auto text-center relative z-10">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 text-glow animate-fade-in">Mini Pupper Robotics Workshop</h1>
+                    <p className="text-lg md:text-2xl mb-2 md:mb-3 opacity-95">May 2, 2026 | Amy Gutmann Hall, University of Pennsylvania</p>
+                    <p className="text-base md:text-xl mb-6 md:mb-8 opacity-90">Cloud-Based Robotics & AI Integration for IEEE Faculty Advisors</p>
+                    <div className="flex gap-3 md:gap-4 justify-center flex-wrap">
+                        <Link to="/registration" className="px-4 md:px-6 py-2 md:py-3 bg-white text-blue-600 rounded-lg font-bold text-sm md:text-base btn-hover-lift">Register Now</Link>
+                        <Link to="/program" className="px-4 md:px-6 py-2 md:py-3 bg-white bg-opacity-20 text-white rounded-lg font-bold text-sm md:text-base btn-hover-lift hover:bg-opacity-30">View Program</Link>
                     </div>
                 </div>
             </section>
