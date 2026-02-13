@@ -18,7 +18,7 @@ const Home = () => {
     const mangdangProductImages = [
         `${process.env.PUBLIC_URL}/images/mini-pupper-1.png`,
         `${process.env.PUBLIC_URL}/images/mini-pupper-2.png`,
-        `${process.env.PUBLIC_URL}/images/MD-turtle.png`,
+        `${process.env.PUBLIC_URL}/images/MD-Turtle.png`,
     ];
 
     const customDesignImages = [
