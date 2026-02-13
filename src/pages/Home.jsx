@@ -102,90 +102,255 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="py-16 px-4">
+            <section className="py-16 md:py-24 px-4 bg-gradient-to-r from-blue-50 to-cyan-50 border-l-4 border-blue-600">
                 <div className="container max-w-4xl mx-auto">
-                    <h2 className="text-4xl font-bold mb-8">About the Workshop</h2>
-                    <div className="space-y-6 text-lg text-gray-700">
-                        <p>In this hands-on session, participants will explore cloud-based systems and integrate advanced AI tools, including generative AI, to develop and control robotic applications using the quadruped Mini Pupper (robot dog). Blending theory with practical experience, participants will learn to manage robotic operations from design to deployment, leveraging AWS cloud services, Python programming, the Robot Operating System (ROS), and AI technologies.</p>
-                        
-                        <p>During the workshop, participants will program the robot to follow a line and perform dance routines synced to music of their choice. The event promises to be a fun, engaging experience, designed to spark interest in robotic programming. Participants will also have the chance to apply their newly acquired skills in a Mini Pupper competition at the <a href="https://attend.ieee.org/stucon-2025/" className="text-blue-600 hover:underline">IEEE R1/R2 Student Conference</a>.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section className="py-16 px-4 bg-gray-50">
-                <div className="container max-w-4xl mx-auto">
-                    <h2 className="text-4xl font-bold mb-8">About the Mini Pupper</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                        <div className="text-lg text-gray-700 space-y-4">
-                            <p><a href="https://mangdang.store/products/mp2" className="text-blue-600 hover:underline">Mini Pupper</a> by <strong><a href="https://www.mangdang.net/" className="text-blue-600 hover:underline">MangDang</a></strong> is an affordable, open-source four-legged robot priced under $1,000 — making it one of the most accessible quadruped platforms for education and research.</p>
-                            <p>Despite its compact size, Mini Pupper is a fully capable robotics platform that supports ROS2, computer vision, SLAM, and can be integrated with Google Gemini for AI-powered interactions and natural language control.</p>
-                            <p>With its low cost and powerful capabilities, Mini Pupper is the ideal tool for universities looking to bring hands-on AI and robotics education to their students without breaking the budget.</p>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-3 text-blue-900">About the Workshop</h2>
+                    <p className="text-blue-600 font-semibold mb-8 text-lg">Hands-on Robotics & AI Integration</p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                            <div className="text-4xl mb-4">☁️</div>
+                            <h3 className="text-xl font-bold mb-3 text-gray-800">Cloud-Based Robotics</h3>
+                            <p className="text-gray-700">Explore advanced systems and integrate AI tools including generative AI to develop and control robotic applications using the quadruped Mini Pupper. Learn to manage operations from design to deployment using AWS, Python, and ROS.</p>
                         </div>
-                        <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                            <img
-                                src={`${process.env.PUBLIC_URL}/images/mini-pupper-2.jpg`}
-                                alt="Mini Pupper 2 robot"
-                                className="w-full h-64 object-cover rounded-lg"
-                            />
-                            <p className="mt-4 text-sm text-gray-600">Mini Pupper 2 Robot</p>
+                        <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                            <div className="text-4xl mb-4">🎵</div>
+                            <h3 className="text-xl font-bold mb-3 text-gray-800">Practical Applications</h3>
+                            <p className="text-gray-700">Program the robot to follow lines and perform dance routines synced to music. Have fun while learning, and apply your skills in the <a href="https://attend.ieee.org/stucon-2025/" className="text-blue-600 font-semibold hover:underline">IEEE R1/R2 Student Conference</a> Mini Pupper Competition.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section className="py-16 px-4">
-                <div className="container max-w-4xl mx-auto">
-                    <h2 className="text-4xl font-bold mb-8 text-center">What You'll Learn</h2>
-                    <div className="card text-lg text-gray-700">
-                        <p>This workshop covers the fundamentals you need to prepare for the <strong>Mini Pupper Competition:</strong></p>
-                        <ul className="list-disc pl-6 mt-2 space-y-2">
-                        <li><strong>Cloud-Based Robotic</strong> – Using AWS cloud services for robotic applications</li>
-                           <li><strong>ROS & Python Programming</strong>  – Setting up and working with ROS on Mini Pupper</li>
-                           <li><strong>Generative AI Integration</strong>  – Leveraging AI tools including Google Gemini for intelligent behaviors</li>
-                           <li><strong>Line Following</strong>  – Programming Mini Pupper to autonomously follow a line</li>
-                           <li><strong>Dance Routines</strong>  – Creating movement sequences synced to music</li>
-                           <li><strong>Competition Prep</strong>  – Skills for the IEEE R1/R2 Mini Pupper Competition</li>
-                        </ul>
+            <section className="py-16 md:py-24 px-4 bg-gray-50">
+                <div className="container max-w-5xl mx-auto">
+                    <div className="text-center mb-12">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-3 text-gray-900">Meet the Mini Pupper</h2>
+                        <p className="text-lg text-gray-600">Affordable, Open-Source Robotics Platform by <a href="https://www.mangdang.net/" className="text-blue-600 font-semibold hover:underline">MangDang</a></p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {/* Card 1: Mangdang Products */}
+                        <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+                            <div className="h-64 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center relative overflow-hidden">
+                                <div className="text-6xl">🤖</div>
+                                <div className="absolute top-4 right-4 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-bold">Official</div>
+                            </div>
+                            <div className="p-8">
+                                <h3 className="text-2xl font-bold mb-3 text-gray-900">Mangdang Products</h3>
+                                <div className="space-y-3 mb-6">
+                                    <div className="flex items-center gap-3">
+                                        <span className="text-2xl">🐕‍🦺</span>
+                                        <span className="text-gray-700"><strong>Mini Pupper 1</strong> - Original platform</span>
+                                    </div>
+                                    <div className="flex items-center gap-3">
+                                        <span className="text-2xl">🦾</span>
+                                        <span className="text-gray-700"><strong>Mini Pupper 2</strong> - Enhanced capabilities</span>
+                                    </div>
+                                    <div className="flex items-center gap-3">
+                                        <span className="text-2xl">🐢</span>
+                                        <span className="text-gray-700"><strong>Mini Pupper Turtle</strong> - Wheeled variant</span>
+                                    </div>
+                                </div>
+                                <p className="text-gray-700 mb-4">Priced under $1,000 — one of the most accessible quadruped platforms for education and research.</p>
+                                <a href="https://mangdang.store/products/mp2" className="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">Learn More</a>
+                            </div>
+                        </div>
+
+                        {/* Card 2: Custom Designs */}
+                        <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+                            <div className="h-64 bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center relative overflow-hidden">
+                                <div className="text-6xl">✨</div>
+                                <div className="absolute top-4 right-4 bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-bold">Custom</div>
+                            </div>
+                            <div className="p-8">
+                                <h3 className="text-2xl font-bold mb-3 text-gray-900">Mini Pupper 2 Custom Design</h3>
+                                <div className="space-y-3 mb-6">
+                                    <div className="flex items-start gap-3">
+                                        <span className="text-2xl mt-1">🎨</span>
+                                        <div>
+                                            <p className="font-semibold text-gray-900">Customizable Build</p>
+                                            <p className="text-gray-700 text-sm">Build your own Mini Pupper 2 with custom configurations</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <span className="text-2xl mt-1">🔧</span>
+                                        <div>
+                                            <p className="font-semibold text-gray-900">Full Customization</p>
+                                            <p className="text-gray-700 text-sm">Choose components, colors, and features</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <span className="text-2xl mt-1">💡</span>
+                                        <div>
+                                            <p className="font-semibold text-gray-900">Your Vision</p>
+                                            <p className="text-gray-700 text-sm">Create unique robotics projects tailored to your needs</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p className="text-gray-700 mb-4">Perfect for advanced projects and specialized research applications.</p>
+                                <button className="px-6 py-2 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors">Explore Designs</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Key Features */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                        <div className="bg-white p-6 rounded-xl shadow-md text-center">
+                            <div className="text-4xl mb-3">🏗️</div>
+                            <h4 className="font-bold text-gray-900 mb-2">ROS2 Support</h4>
+                            <p className="text-gray-700 text-sm">Full Robot Operating System integration</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-xl shadow-md text-center">
+                            <div className="text-4xl mb-3">🧠</div>
+                            <h4 className="font-bold text-gray-900 mb-2">AI Powered</h4>
+                            <p className="text-gray-700 text-sm">Integrated with Google Gemini & ML tools</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-xl shadow-md text-center">
+                            <div className="text-4xl mb-3">💰</div>
+                            <h4 className="font-bold text-gray-900 mb-2">Budget Friendly</h4>
+                            <p className="text-gray-700 text-sm">Under $1,000 for complete platform</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section className="py-16 px-4">
-                <div className="container max-w-4xl mx-auto">
-                    <h2 className="text-4xl font-bold mb-8 text-center">What You'll Take Home</h2>
-                    <div className="card text-lg text-gray-700">
-                        <p>After completing this workshop, you will know exactly what is needed to bring a hands-on robotics and AI class back to your university.
-                             You'll leave with a clear understanding of curriculum structure, hardware requirements, software setup, 
-                             and teaching strategies to train your students with interests in AI and robotics using the Mini Pupper platform. 
-                             Whether you plan to offer a semester-long course, a weekend bootcamp, or prepare a competition team, 
-                             this workshop gives you the complete playbook to get started.</p>
+            <section className="py-16 md:py-24 px-4 bg-white">
+                <div className="container max-w-5xl mx-auto">
+                    <div className="text-center mb-12">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-3 text-gray-900">What You'll Learn</h2>
+                        <p className="text-lg text-gray-600">Master the skills needed for the Mini Pupper Competition</p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {[
+                            { icon: '☁️', title: 'Cloud Robotics', desc: 'Using AWS cloud services for robotic applications' },
+                            { icon: '🐍', title: 'ROS & Python', desc: 'Setting up and working with ROS on Mini Pupper' },
+                            { icon: '🧠', title: 'Generative AI', desc: 'Leveraging Google Gemini for intelligent behaviors' },
+                            { icon: '➡️', title: 'Line Following', desc: 'Programming Mini Pupper to autonomously follow a line' },
+                            { icon: '💃', title: 'Dance Routines', desc: 'Creating movement sequences synced to music' },
+                            { icon: '🏆', title: 'Competition Prep', desc: 'Skills for the IEEE R1/R2 Mini Pupper Competition' }
+                        ].map((item, idx) => (
+                            <div key={idx} className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border-2 border-blue-200 hover:border-blue-400 hover:shadow-lg transition-all duration-300 group">
+                                <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">{item.icon}</div>
+                                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                                <p className="text-gray-700">{item.desc}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
-            <section className="py-16 px-4">
+            <section className="py-16 md:py-24 px-4 bg-gradient-to-r from-green-50 to-emerald-50">
                 <div className="container max-w-4xl mx-auto">
-                    <h2 className="text-4xl font-bold mb-8 text-center">Who Should Attend</h2>
-                    <div className="card text-lg text-gray-700">
-                        <p>This workshop is designed for <strong>IEEE student branch faculty advisors in Regions 1 and 2</strong> who are preparing their student teams for the IEEE R1/R2 Student Conference Mini Pupper Competition.</p>
-                        <p className="mt-4">Whether you have prior robotics experience or are new to ROS and quadruped robots, this workshop will equip you with the knowledge and confidence to guide your students.</p>
+                    <div className="text-center mb-12">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-3 text-gray-900">What You'll Take Home</h2>
+                        <p className="text-lg text-gray-600">Your complete playbook for success</p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {[
+                            { num: '1️⃣', title: 'Curriculum Structure', desc: 'Complete course framework for your students' },
+                            { num: '2️⃣', title: 'Hardware Guide', desc: 'Full requirements and setup instructions' },
+                            { num: '3️⃣', title: 'Software Setup', desc: 'ROS2, AWS, and AI tool configurations' },
+                            { num: '4️⃣', title: 'Teaching Strategies', desc: 'Best practices for guiding student learning' }
+                        ].map((item, idx) => (
+                            <div key={idx} className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all border-l-4 border-green-500 group">
+                                <div className="flex items-start gap-4">
+                                    <div className="text-3xl flex-shrink-0">{item.num}</div>
+                                    <div>
+                                        <h3 className="text-lg font-bold text-gray-900 mb-1">{item.title}</h3>
+                                        <p className="text-gray-700">{item.desc}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="mt-10 bg-green-600 text-white p-8 rounded-xl text-center">
+                        <p className="text-lg font-semibold mb-3">Whether you plan to offer a semester-long course, a weekend bootcamp, or prepare a competition team...</p>
+                        <p className="text-2xl font-bold">This workshop gives you the complete playbook to get started! 🚀</p>
                     </div>
                 </div>
             </section>
 
-            <section className="bg-blue-50 py-16 px-4">
-                <div className="container max-w-2xl mx-auto text-center">
-                    <h2 className="text-3xl font-bold mb-6">Speaker</h2>
-                    <img
-                        src={`${process.env.PUBLIC_URL}/images/dr-li-bai.jpg`}
-                        alt="Dr. Li Bai"
-                        className="w-40 h-40 rounded-full mx-auto mb-6 object-cover"
-                    />
-                    <p className="text-lg text-gray-700 mb-8"><strong>Dr. Li Bai,</strong> Associate Dean for Research, Graduate Studies, and Faculty Affairs at Temple University, 
-                        is a Principal Investigator leading research in AI-driven robotics, distributed information systems, federated learning, and cybersecurity. 
-                        His work integrates ROS2, AWS, and Google Gemini for intelligent automation. A Senior Member of IEEE, Dr. Bai currently serves as the IEEE Region 2 Student Activities Coordinator 
-                        (SAC) and is passionate about STEM outreach, working with high school teachers to develop robotics programs that inspire the next generation of engineers.</p> 
+            <section className="py-16 md:py-24 px-4 bg-white">
+                <div className="container max-w-4xl mx-auto">
+                    <div className="text-center mb-12">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-3 text-gray-900">Who Should Attend</h2>
+                        <p className="text-lg text-gray-600">Perfect for IEEE Faculty Advisors & Student Leaders</p>
+                    </div>
+                    <div className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-2xl shadow-xl p-8 md:p-12 text-center mb-8">
+                        <p className="text-2xl font-bold mb-4">IEEE Student Branch Faculty Advisors</p>
+                        <p className="text-lg mb-4 opacity-95">In Regions 1 and 2 preparing teams for the IEEE R1/R2 Student Conference</p>
+                        <div className="text-5xl">📍</div>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="bg-blue-50 p-8 rounded-xl border-2 border-blue-200 text-center">
+                            <div className="text-4xl mb-4">🚀</div>
+                            <h3 className="text-xl font-bold text-gray-900 mb-2">Robotics Enthusiasts</h3>
+                            <p className="text-gray-700">New to ROS and quadruped robots? Perfect! Gain foundational knowledge with expert guidance.</p>
+                        </div>
+                        <div className="bg-blue-50 p-8 rounded-xl border-2 border-blue-200 text-center">
+                            <div className="text-4xl mb-4">⭐</div>
+                            <h3 className="text-xl font-bold text-gray-900 mb-2">Experienced Leaders</h3>
+                            <p className="text-gray-700">Already have robotics experience? Enhance your skills with advanced AI integration techniques.</p>
+                        </div>
+                    </div>
+                    <div className="mt-10 bg-gradient-to-r from-cyan-50 to-blue-50 p-8 rounded-xl border-l-4 border-cyan-500">
+                        <p className="text-gray-800 text-center text-lg">Whether you have prior experience or are just starting, this workshop will equip you with the <strong>knowledge and confidence to guide your students</strong> in AI-powered robotics. 💡</p>
+                    </div>
+                </div>
+            </section>
+
+            <section className="py-16 md:py-24 px-4 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-900 text-white">
+                <div className="container max-w-4xl mx-auto">
+                    <div className="text-center mb-12">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-3">Meet Your Instructor</h2>
+                        <p className="text-lg text-blue-200">Learn from an industry expert and IEEE leader</p>
+                    </div>
+                    <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white border-opacity-20">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                            {/* Image */}
+                            <div className="text-center">
+                                <div className="relative inline-block">
+                                    <div className="w-48 h-48 rounded-full bg-gradient-to-br from-blue-400 to-cyan-400 p-1">
+                                        <img
+                                            src={`${process.env.PUBLIC_URL}/images/dr-li-bai.jpg`}
+                                            alt="Dr. Li Bai"
+                                            className="w-full h-full rounded-full object-cover"
+                                        />
+                                    </div>
+                                    <div className="absolute -bottom-2 -right-2 bg-yellow-400 text-gray-900 px-4 py-2 rounded-full font-bold text-sm">IEEE Senior</div>
+                                </div>
+                            </div>
+                            {/* Bio */}
+                            <div className="md:col-span-2">
+                                <h3 className="text-3xl font-bold mb-2">Dr. Li Bai</h3>
+                                <p className="text-cyan-300 font-semibold mb-6">Associate Dean for Research, Graduate Studies & Faculty Affairs at Temple University</p>
+                                
+                                <div className="space-y-4 mb-6">
+                                    <div className="flex gap-3">
+                                        <span className="text-2xl">🤖</span>
+                                        <p className="text-gray-100">Principal Investigator in <strong>AI-driven robotics</strong> and distributed systems</p>
+                                    </div>
+                                    <div className="flex gap-3">
+                                        <span className="text-2xl">☁️</span>
+                                        <p className="text-gray-100">Expert integrating <strong>ROS2, AWS, and Google Gemini</strong> for intelligent automation</p>
+                                    </div>
+                                    <div className="flex gap-3">
+                                        <span className="text-2xl">🎓</span>
+                                        <p className="text-gray-100"><strong>IEEE Region 2 Student Activities Coordinator</strong> - Passionate about STEM education</p>
+                                    </div>
+                                    <div className="flex gap-3">
+                                        <span className="text-2xl">🌟</span>
+                                        <p className="text-gray-100">Devoted to inspiring the <strong>next generation of engineers</strong> through robotics programs</p>
+                                    </div>
+                                </div>
+                                
+                                <div className="flex flex-wrap gap-3">
+                                    <span className="bg-blue-600 px-4 py-2 rounded-full text-sm font-semibold">AI & Robotics</span>
+                                    <span className="bg-blue-600 px-4 py-2 rounded-full text-sm font-semibold">Federated Learning</span>
+                                    <span className="bg-blue-600 px-4 py-2 rounded-full text-sm font-semibold">Cybersecurity</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
