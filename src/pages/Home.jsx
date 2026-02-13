@@ -17,14 +17,14 @@ const Home = () => {
 
     const mangdangProductImages = [
         `${process.env.PUBLIC_URL}/images/mini-pupper-1.png`,
-        `${process.env.PUBLIC_URL}/images/mini-pupper-2.jpg`,
+        `${process.env.PUBLIC_URL}/images/mini-pupper-2.png`,
         `${process.env.PUBLIC_URL}/images/MD-turtle.png`,
     ];
 
     const customDesignImages = [
-        'https://via.placeholder.com/400x300?text=Custom+Design+1',
-        'https://via.placeholder.com/400x300?text=Custom+Design+2',
-        'https://via.placeholder.com/400x300?text=Custom+Design+3',
+        `${process.env.PUBLIC_URL}/images/minipupper-skin-1.png`,
+        `${process.env.PUBLIC_URL}/images/minipupper-skin-2.jpg`,
+        `${process.env.PUBLIC_URL}/images/minipupper-skin-3.jpg`,
     ];
 
     useEffect(() => {
@@ -152,11 +152,13 @@ const Home = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Card 1: Mangdang Products */}
                         <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
-                            <div className="h-64 bg-gray-200 flex items-center justify-center relative overflow-hidden">
+                            <div className="h-64 bg-gradient-to-br from-blue-100 via-cyan-50 to-blue-50 flex items-center justify-center relative overflow-hidden">
                                 <img
                                     src={mangdangProductImages[hoveredProduct]}
                                     alt="Product"
-                                    className="w-full h-full object-cover transition-all duration-300"
+                                    className={`transition-all duration-300 ${
+                                        hoveredProduct === 1 ? 'h-full w-auto object-contain' : 'w-full h-full object-cover'
+                                    }`}
                                 />
                                 <div className="absolute top-4 right-4 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-bold">Official</div>
                             </div>
@@ -170,7 +172,7 @@ const Home = () => {
                                         }`}
                                     >
                                         <span className="text-2xl">🐕‍🦺</span>
-                                        <span className="text-gray-700"><strong>Mini Pupper 1</strong> - Original platform</span>
+                                        <span className="text-gray-700"><strong>Mini Pupper 1</strong> - The Beloved Original </span>
                                     </button>
                                     <button
                                         onMouseEnter={() => setHoveredProduct(1)}
@@ -179,7 +181,7 @@ const Home = () => {
                                         }`}
                                     >
                                         <span className="text-2xl">🦾</span>
-                                        <span className="text-gray-700"><strong>Mini Pupper 2</strong> - Enhanced capabilities</span>
+                                        <span className="text-gray-700"><strong>Mini Pupper 2</strong> - Even More Powerful!</span>
                                     </button>
                                     <button
                                         onMouseEnter={() => setHoveredProduct(2)}
@@ -188,17 +190,17 @@ const Home = () => {
                                         }`}
                                     >
                                         <span className="text-2xl">🐢</span>
-                                        <span className="text-gray-700"><strong>MD Turtle</strong> - Wheeled variant</span>
+                                        <span className="text-gray-700"><strong>MD Turtle</strong> - With Edge AI </span>
                                     </button>
                                 </div>
                                 <p className="text-gray-700 mb-4">Priced under $1,000 — one of the most accessible quadruped platforms for education and research.</p>
-                                <a href="https://mangdang.store/products/mp2" className="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">Learn More</a>
+                                <a href="https://mangdang.store/products/mp2" className="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">Own One</a>
                             </div>
                         </div>
 
                         {/* Card 2: Custom Designs */}
                         <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
-                            <div className="h-64 bg-gray-200 flex items-center justify-center relative overflow-hidden">
+                            <div className="h-64 bg-gradient-to-br from-purple-100 via-pink-50 to-purple-50 flex items-center justify-center relative overflow-hidden">
                                 <img
                                     src={customDesignImages[customDesignIndex]}
                                     alt="Custom Design"
