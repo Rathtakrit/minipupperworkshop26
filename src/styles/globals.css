@@ -23,6 +23,17 @@
     }
 }
 
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 .hero-gradient {
     background: linear-gradient(-45deg, #1e40af, #1e3a8a, #3b82f6, #1e40af);
     background-size: 400% 400%;

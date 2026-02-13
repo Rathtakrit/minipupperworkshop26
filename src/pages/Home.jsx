@@ -83,7 +83,7 @@ const Home = () => {
                     src={heroImages[currentImageIndex]}
                     alt="Hero"
                     className="absolute inset-0 w-full h-full object-cover"
-                    style={{ animation: 'fadeIn 0.8s ease-in-out' }}
+                    style={{ animation: 'slideIn 0.6s ease-in-out' }}
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-40"></div>
                 
@@ -122,7 +122,7 @@ const Home = () => {
                 </div>
 
                 <div className="container max-w-4xl mx-auto text-center relative z-10">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 text-glow animate-fade-in">Mini Pupper Robotics Workshop</h1>
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 text-glow animate-fade-in">MiniPupper Workshop 2026</h1>
                     <p className="text-lg md:text-2xl mb-2 md:mb-3 opacity-95">May 2, 2026 | Amy Gutmann Hall, University of Pennsylvania</p>
                     <p className="text-base md:text-xl mb-6 md:mb-8 opacity-90">Cloud-Based Robotics & AI Integration for IEEE Faculty Advisors</p>
                     <div className="flex gap-3 md:gap-4 justify-center flex-wrap">
@@ -160,13 +160,19 @@ const Home = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Card 1: Mangdang Products */}
                         <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
-                            <div className="h-64 bg-gradient-to-br from-blue-100 via-cyan-50 to-blue-50 flex items-center justify-center relative overflow-hidden">
+                            <div className={`h-64 flex items-center justify-center relative overflow-hidden transition-all duration-500 ${
+                                hoveredProduct === 0 ? 'bg-gradient-to-br from-orange-100 via-yellow-50 to-orange-50' :
+                                hoveredProduct === 1 ? 'bg-gradient-to-br from-blue-100 via-cyan-50 to-blue-50' :
+                                'bg-gradient-to-br from-green-100 via-emerald-50 to-green-50'
+                            }`}>
                                 <img
+                                    key={hoveredProduct}
                                     src={mangdangProductImages[hoveredProduct]}
                                     alt="Product"
                                     className={`transition-all duration-300 ${
                                         hoveredProduct === 1 ? 'h-full w-auto object-contain' : 'w-full h-full object-cover'
                                     }`}
+                                    style={{ animation: 'slideIn 0.5s ease-in-out' }}
                                 />
                                 <div className="absolute top-4 right-4 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-bold">Official</div>
                             </div>
@@ -214,7 +220,7 @@ const Home = () => {
                                     src={customDesignImages[customDesignIndex]}
                                     alt="Custom Design"
                                     className="w-full h-full object-cover"
-                                    style={{ animation: 'fadeIn 0.8s ease-in-out' }}
+                                    style={{ animation: 'slideIn 0.6s ease-in-out' }}
                                 />
                                 <div className="absolute top-4 right-4 bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-bold">Custom</div>
                                 
@@ -336,9 +342,9 @@ const Home = () => {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {[
-                            { num: '1️⃣', title: 'Bring AI Back', desc: 'bring a hands-on robotics and AI class back to your university' },
-                            { num: '2️⃣', title: 'Understand', desc: 'leave with a clear understanding of curriculum structure, hardware requirements, software setup, and teaching strategies' },
-                            { num: '3️⃣', title: 'Train Student', desc: 'For those who are interested in AI and robotics' }
+                            { num: '1️⃣', title: 'Better Curriculum', desc: 'bring a hands-on robotics and AI class back to your university' },
+                            { num: '2️⃣', title: 'Understand Student', desc: 'leave with a clear understanding of hardware, software, and teaching strategies' },
+                            { num: '3️⃣', title: 'Train Student', desc: 'create a training program for those who are interested in AI and robotics' }
                         ].map((item, idx) => (
                             <div key={idx} className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all border-l-4 border-green-500 group">
                                 <div className="flex items-start gap-4">
