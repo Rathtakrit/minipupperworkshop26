@@ -1,6 +1,7 @@
 # MiniPupperWorkshop 2026
 
 for minipupper workshop IEEE Region 1+2.
+Live at https://rathtakrit.github.io/minipupperworkshop26/
 
 ## Project Structure
 
