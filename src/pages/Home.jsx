@@ -336,10 +336,9 @@ const Home = () => {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {[
-                            { num: '1️⃣', title: 'Curriculum Structure', desc: 'Complete course framework for your students' },
-                            { num: '2️⃣', title: 'Hardware Guide', desc: 'Full requirements and setup instructions' },
-                            { num: '3️⃣', title: 'Software Setup', desc: 'ROS2, AWS, and AI tool configurations' },
-                            { num: '4️⃣', title: 'Teaching Strategies', desc: 'Best practices for guiding student learning' }
+                            { num: '1️⃣', title: 'Bring AI Back', desc: 'bring a hands-on robotics and AI class back to your university' },
+                            { num: '2️⃣', title: 'Understand', desc: 'leave with a clear understanding of curriculum structure, hardware requirements, software setup, and teaching strategies' },
+                            { num: '3️⃣', title: 'Train Student', desc: 'For those who are interested in AI and robotics' }
                         ].map((item, idx) => (
                             <div key={idx} className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all border-l-4 border-green-500 group">
                                 <div className="flex items-start gap-4">
@@ -369,18 +368,6 @@ const Home = () => {
                         <p className="text-2xl font-bold mb-4">IEEE Student Branch Faculty Advisors</p>
                         <p className="text-lg mb-4 opacity-95">In Regions 1 and 2 preparing teams for the IEEE R1/R2 Student Conference</p>
                         <div className="text-5xl">📍</div>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="bg-blue-50 p-8 rounded-xl border-2 border-blue-200 text-center">
-                            <div className="text-4xl mb-4">🚀</div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-2">Robotics Enthusiasts</h3>
-                            <p className="text-gray-700">New to ROS and quadruped robots? Perfect! Gain foundational knowledge with expert guidance.</p>
-                        </div>
-                        <div className="bg-blue-50 p-8 rounded-xl border-2 border-blue-200 text-center">
-                            <div className="text-4xl mb-4">⭐</div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-2">Experienced Leaders</h3>
-                            <p className="text-gray-700">Already have robotics experience? Enhance your skills with advanced AI integration techniques.</p>
-                        </div>
                     </div>
                     <div className="mt-10 bg-gradient-to-r from-cyan-50 to-blue-50 p-8 rounded-xl border-l-4 border-cyan-500">
                         <p className="text-gray-800 text-center text-lg">Whether you have prior experience or are just starting, this workshop will equip you with the <strong>knowledge and confidence to guide your students</strong> in AI-powered robotics. 💡</p>
