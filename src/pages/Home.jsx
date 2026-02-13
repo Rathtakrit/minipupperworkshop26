@@ -16,9 +16,9 @@ const Home = () => {
     ];
 
     const mangdangProductImages = [
-        'https://via.placeholder.com/400x300?text=Mini+Pupper+1',
-        'https://via.placeholder.com/400x300?text=Mini+Pupper+2',
-        'https://via.placeholder.com/400x300?text=Mini+Pupper+Turtle',
+        `${process.env.PUBLIC_URL}/images/mini-pupper-1.png`,
+        `${process.env.PUBLIC_URL}/images/mini-pupper-2.jpg`,
+        `${process.env.PUBLIC_URL}/images/MD-turtle.png`,
     ];
 
     const customDesignImages = [
@@ -36,6 +36,10 @@ const Home = () => {
 
     const handlePrev = () => {
         setCurrentImageIndex((prev) => (prev - 1 + heroImages.length) % heroImages.length);
+    };
+
+    const handleNext = () => {
+        setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
     };
 
     const handleCustomDesignPrev = () => {
@@ -184,7 +188,7 @@ const Home = () => {
                                         }`}
                                     >
                                         <span className="text-2xl">🐢</span>
-                                        <span className="text-gray-700"><strong>Mini Pupper Turtle</strong> - Wheeled variant</span>
+                                        <span className="text-gray-700"><strong>MD Turtle</strong> - Wheeled variant</span>
                                     </button>
                                 </div>
                                 <p className="text-gray-700 mb-4">Priced under $1,000 — one of the most accessible quadruped platforms for education and research.</p>
