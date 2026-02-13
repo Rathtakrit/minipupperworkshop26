@@ -34,6 +34,13 @@ const Home = () => {
         return () => clearInterval(interval);
     }, [heroImages.length]);
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCustomDesignIndex((prev) => (prev + 1) % customDesignImages.length);
+        }, 4000);
+        return () => clearInterval(interval);
+    }, [customDesignImages.length]);
+
     const handlePrev = () => {
         setCurrentImageIndex((prev) => (prev - 1 + heroImages.length) % heroImages.length);
     };
@@ -72,10 +79,11 @@ const Home = () => {
                 onTouchEnd={handleTouchEnd}
             >
                 <img
+                    key={currentImageIndex}
                     src={heroImages[currentImageIndex]}
                     alt="Hero"
                     className="absolute inset-0 w-full h-full object-cover"
-                    style={{ transition: 'opacity 0.5s ease-in-out' }}
+                    style={{ animation: 'fadeIn 0.8s ease-in-out' }}
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-40"></div>
                 
@@ -193,7 +201,7 @@ const Home = () => {
                                         <span className="text-gray-700"><strong>MD Turtle</strong> - With Edge AI </span>
                                     </button>
                                 </div>
-                                <p className="text-gray-700 mb-4">Priced under $1,000 — one of the most accessible quadruped platforms for education and research.</p>
+                                <p className="text-gray-700 mb-4"><strong>Priced under $1,000 </strong>— one of the most accessible quadruped platforms for education and research.</p>
                                 <a href="https://mangdang.store/products/mp2" className="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">Own One</a>
                             </div>
                         </div>
@@ -202,9 +210,11 @@ const Home = () => {
                         <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
                             <div className="h-64 bg-gradient-to-br from-purple-100 via-pink-50 to-purple-50 flex items-center justify-center relative overflow-hidden">
                                 <img
+                                    key={customDesignIndex}
                                     src={customDesignImages[customDesignIndex]}
                                     alt="Custom Design"
-                                    className="w-full h-full object-cover transition-all duration-300"
+                                    className="w-full h-full object-cover"
+                                    style={{ animation: 'fadeIn 0.8s ease-in-out' }}
                                 />
                                 <div className="absolute top-4 right-4 bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-bold">Custom</div>
                                 
@@ -267,7 +277,7 @@ const Home = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <p className="text-gray-700 mb-4">Perfect for advanced projects and specialized research applications.</p>
+                                <p className="text-gray-700 mb-4">Personalize your Minipupper, and show of your creativity</p>
                             </div>
                         </div>
                     </div>
@@ -308,10 +318,10 @@ const Home = () => {
                             { icon: '💃', title: 'Dance Routines', desc: 'Creating movement sequences synced to music' },
                             { icon: '🏆', title: 'Competition Prep', desc: 'Skills for the IEEE R1/R2 Mini Pupper Competition' }
                         ].map((item, idx) => (
-                            <div key={idx} className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border-2 border-blue-200 hover:border-blue-400 hover:shadow-lg transition-all duration-300 group">
-                                <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">{item.icon}</div>
-                                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
-                                <p className="text-gray-700">{item.desc}</p>
+                            <div key={idx} className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border-2 border-blue-200 hover:border-blue-400 hover:shadow-2xl transition-all duration-300 group hover:scale-105 cursor-pointer">
+                                <div className="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">{item.icon}</div>
+                                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">{item.title}</h3>
+                                <p className="text-gray-700 group-hover:text-gray-900">{item.desc}</p>
                             </div>
                         ))}
                     </div>
