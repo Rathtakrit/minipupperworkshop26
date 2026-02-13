@@ -10,7 +10,7 @@ const Home = () => {
         `${process.env.PUBLIC_URL}/images/Past-IEEE-1.jpg`,
         `${process.env.PUBLIC_URL}/images/Past-IEEE-2.jpg`,
         `${process.env.PUBLIC_URL}/images/Past-IEEE-3.jpg`,
-        `${process.env.PUBLIC_URL}/images/Past-IEEE-4.jpg`,
+        `${process.env.PUBLIC_URL}/images/Past-IEEE-4.jpeg`,
     ];
 
     useEffect(() => {
@@ -45,15 +45,16 @@ const Home = () => {
     return (
         <div>
             <section 
-                className="hero-gradient text-white py-12 md:py-20 px-4 min-h-screen md:min-h-auto flex items-center bg-cover bg-center relative overflow-hidden"
-                style={{
-                    backgroundImage: `url(${heroImages[currentImageIndex]})`,
-                    backgroundAttachment: 'fixed',
-                    transition: 'background-image 0.5s ease-in-out'
-                }}
+                className="text-white py-12 md:py-20 px-4 min-h-screen md:min-h-auto flex items-center relative overflow-hidden"
                 onTouchStart={handleTouchStart}
                 onTouchEnd={handleTouchEnd}
             >
+                <img
+                    src={heroImages[currentImageIndex]}
+                    alt="Hero"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    style={{ transition: 'opacity 0.5s ease-in-out' }}
+                />
                 <div className="absolute inset-0 bg-black bg-opacity-40"></div>
                 
                 {/* Navigation Buttons */}
