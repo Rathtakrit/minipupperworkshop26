@@ -5,12 +5,26 @@ const Home = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [touchStart, setTouchStart] = useState(0);
     const [touchEnd, setTouchEnd] = useState(0);
+    const [hoveredProduct, setHoveredProduct] = useState(0); // 0: Mini Pupper 1, 1: Mini Pupper 2, 2: Turtle
+    const [customDesignIndex, setCustomDesignIndex] = useState(0);
 
     const heroImages = [
         `${process.env.PUBLIC_URL}/images/Past-IEEE-1.jpg`,
         `${process.env.PUBLIC_URL}/images/Past-IEEE-2.jpg`,
         `${process.env.PUBLIC_URL}/images/Past-IEEE-3.jpg`,
         `${process.env.PUBLIC_URL}/images/Past-IEEE-4.jpeg`,
+    ];
+
+    const mangdangProductImages = [
+        'https://via.placeholder.com/400x300?text=Mini+Pupper+1',
+        'https://via.placeholder.com/400x300?text=Mini+Pupper+2',
+        'https://via.placeholder.com/400x300?text=Mini+Pupper+Turtle',
+    ];
+
+    const customDesignImages = [
+        'https://via.placeholder.com/400x300?text=Custom+Design+1',
+        'https://via.placeholder.com/400x300?text=Custom+Design+2',
+        'https://via.placeholder.com/400x300?text=Custom+Design+3',
     ];
 
     useEffect(() => {
@@ -24,8 +38,12 @@ const Home = () => {
         setCurrentImageIndex((prev) => (prev - 1 + heroImages.length) % heroImages.length);
     };
 
-    const handleNext = () => {
-        setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    const handleCustomDesignPrev = () => {
+        setCustomDesignIndex((prev) => (prev - 1 + customDesignImages.length) % customDesignImages.length);
+    };
+
+    const handleCustomDesignNext = () => {
+        setCustomDesignIndex((prev) => (prev + 1) % customDesignImages.length);
     };
 
     const handleTouchStart = (e) => {
@@ -130,25 +148,44 @@ const Home = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Card 1: Mangdang Products */}
                         <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
-                            <div className="h-64 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center relative overflow-hidden">
-                                <div className="text-6xl">🤖</div>
+                            <div className="h-64 bg-gray-200 flex items-center justify-center relative overflow-hidden">
+                                <img
+                                    src={mangdangProductImages[hoveredProduct]}
+                                    alt="Product"
+                                    className="w-full h-full object-cover transition-all duration-300"
+                                />
                                 <div className="absolute top-4 right-4 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-bold">Official</div>
                             </div>
                             <div className="p-8">
                                 <h3 className="text-2xl font-bold mb-3 text-gray-900">Mangdang Products</h3>
                                 <div className="space-y-3 mb-6">
-                                    <div className="flex items-center gap-3">
+                                    <button
+                                        onMouseEnter={() => setHoveredProduct(0)}
+                                        className={`w-full text-left flex items-center gap-3 p-3 rounded-lg transition-all ${
+                                            hoveredProduct === 0 ? 'bg-blue-100 border-2 border-blue-600' : 'bg-gray-50 hover:bg-gray-100'
+                                        }`}
+                                    >
                                         <span className="text-2xl">🐕‍🦺</span>
                                         <span className="text-gray-700"><strong>Mini Pupper 1</strong> - Original platform</span>
-                                    </div>
-                                    <div className="flex items-center gap-3">
+                                    </button>
+                                    <button
+                                        onMouseEnter={() => setHoveredProduct(1)}
+                                        className={`w-full text-left flex items-center gap-3 p-3 rounded-lg transition-all ${
+                                            hoveredProduct === 1 ? 'bg-blue-100 border-2 border-blue-600' : 'bg-gray-50 hover:bg-gray-100'
+                                        }`}
+                                    >
                                         <span className="text-2xl">🦾</span>
                                         <span className="text-gray-700"><strong>Mini Pupper 2</strong> - Enhanced capabilities</span>
-                                    </div>
-                                    <div className="flex items-center gap-3">
+                                    </button>
+                                    <button
+                                        onMouseEnter={() => setHoveredProduct(2)}
+                                        className={`w-full text-left flex items-center gap-3 p-3 rounded-lg transition-all ${
+                                            hoveredProduct === 2 ? 'bg-blue-100 border-2 border-blue-600' : 'bg-gray-50 hover:bg-gray-100'
+                                        }`}
+                                    >
                                         <span className="text-2xl">🐢</span>
                                         <span className="text-gray-700"><strong>Mini Pupper Turtle</strong> - Wheeled variant</span>
-                                    </div>
+                                    </button>
                                 </div>
                                 <p className="text-gray-700 mb-4">Priced under $1,000 — one of the most accessible quadruped platforms for education and research.</p>
                                 <a href="https://mangdang.store/products/mp2" className="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">Learn More</a>
@@ -157,9 +194,47 @@ const Home = () => {
 
                         {/* Card 2: Custom Designs */}
                         <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
-                            <div className="h-64 bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center relative overflow-hidden">
-                                <div className="text-6xl">✨</div>
+                            <div className="h-64 bg-gray-200 flex items-center justify-center relative overflow-hidden">
+                                <img
+                                    src={customDesignImages[customDesignIndex]}
+                                    alt="Custom Design"
+                                    className="w-full h-full object-cover transition-all duration-300"
+                                />
                                 <div className="absolute top-4 right-4 bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-bold">Custom</div>
+                                
+                                {/* Gallery Navigation */}
+                                <button
+                                    onClick={handleCustomDesignPrev}
+                                    className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white bg-opacity-50 hover:bg-opacity-75 text-gray-900 p-2 rounded-full transition-all"
+                                    aria-label="Previous design"
+                                >
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                                    </svg>
+                                </button>
+                                <button
+                                    onClick={handleCustomDesignNext}
+                                    className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-white bg-opacity-50 hover:bg-opacity-75 text-gray-900 p-2 rounded-full transition-all"
+                                    aria-label="Next design"
+                                >
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </button>
+
+                                {/* Gallery Indicators */}
+                                <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+                                    {customDesignImages.map((_, index) => (
+                                        <button
+                                            key={index}
+                                            onClick={() => setCustomDesignIndex(index)}
+                                            className={`w-2 h-2 rounded-full transition-all ${
+                                                index === customDesignIndex ? 'bg-white w-6' : 'bg-white bg-opacity-50 hover:bg-opacity-75'
+                                            }`}
+                                            aria-label={`Go to design ${index + 1}`}
+                                        />
+                                    ))}
+                                </div>
                             </div>
                             <div className="p-8">
                                 <h3 className="text-2xl font-bold mb-3 text-gray-900">Mini Pupper 2 Custom Design</h3>
@@ -187,7 +262,6 @@ const Home = () => {
                                     </div>
                                 </div>
                                 <p className="text-gray-700 mb-4">Perfect for advanced projects and specialized research applications.</p>
-                                <button className="px-6 py-2 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors">Explore Designs</button>
                             </div>
                         </div>
                     </div>
