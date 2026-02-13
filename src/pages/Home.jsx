@@ -319,7 +319,7 @@ const Home = () => {
                             { icon: '🏆', title: 'Competition Prep', desc: 'Skills for the IEEE R1/R2 Mini Pupper Competition' }
                         ].map((item, idx) => (
                             <div key={idx} className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border-2 border-blue-200 hover:border-blue-400 hover:shadow-2xl transition-all duration-300 group hover:scale-105 cursor-pointer">
-                                <div className="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">{item.icon}</div>
+                                <div className="text-4xl mb-3">{item.icon}</div>
                                 <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">{item.title}</h3>
                                 <p className="text-gray-700 group-hover:text-gray-900">{item.desc}</p>
                             </div>
@@ -398,15 +398,15 @@ const Home = () => {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                             {/* Image */}
                             <div className="text-center">
-                                <div className="relative inline-block">
-                                    <div className="w-48 h-48 rounded-full bg-gradient-to-br from-blue-400 to-cyan-400 p-1">
+                                <div className="relative inline-block pb-8">
+                                    <div className="w-48 h-48 rounded-full bg-gradient-to-br from-blue-400 to-cyan-400 p-1 mx-auto">
                                         <img
                                             src={`${process.env.PUBLIC_URL}/images/dr-li-bai.jpg`}
                                             alt="Dr. Li Bai"
                                             className="w-full h-full rounded-full object-cover"
                                         />
                                     </div>
-                                    <div className="absolute -bottom-2 -right-2 bg-yellow-400 text-gray-900 px-4 py-2 rounded-full font-bold text-sm">IEEE Senior</div>
+                                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-gray-900 px-4 py-2 rounded-full font-bold text-sm shadow-lg">IEEE Senior</div>
                                 </div>
                             </div>
                             {/* Bio */}
