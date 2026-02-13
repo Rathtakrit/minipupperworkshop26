@@ -9,11 +9,8 @@ const Header = () => {
             <div className="container mx-auto max-w-7xl flex items-center justify-between h-20 px-4">
                 {/* Logo */}
                 <Link to="/" className="flex items-center gap-2 group min-w-0">
-                    <div className="text-2xl font-bold text-white group-hover:text-blue-100 transition-colors duration-300 flex-shrink-0">
-                        🤖
-                    </div>
                     <span className="text-lg md:text-2xl font-bold group-hover:text-blue-100 transition-colors duration-300 truncate">
-                        MiniPupper Workshop
+                        MiniPupper Workshop 2026
                     </span>
                 </Link>
 

@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/minipupperworkshop26/static/css/main.8e52e997.chunk.css",
-    "main.js": "/minipupperworkshop26/static/js/main.bd998e3f.chunk.js",
-    "main.js.map": "/minipupperworkshop26/static/js/main.bd998e3f.chunk.js.map",
+    "main.css": "/minipupperworkshop26/static/css/main.c835d4ff.chunk.css",
+    "main.js": "/minipupperworkshop26/static/js/main.7541738b.chunk.js",
+    "main.js.map": "/minipupperworkshop26/static/js/main.7541738b.chunk.js.map",
     "runtime-main.js": "/minipupperworkshop26/static/js/runtime-main.e2881ff0.js",
     "runtime-main.js.map": "/minipupperworkshop26/static/js/runtime-main.e2881ff0.js.map",
-    "static/js/2.b7e2d6c6.chunk.js": "/minipupperworkshop26/static/js/2.b7e2d6c6.chunk.js",
-    "static/js/2.b7e2d6c6.chunk.js.map": "/minipupperworkshop26/static/js/2.b7e2d6c6.chunk.js.map",
+    "static/js/2.964e3dbf.chunk.js": "/minipupperworkshop26/static/js/2.964e3dbf.chunk.js",
+    "static/js/2.964e3dbf.chunk.js.map": "/minipupperworkshop26/static/js/2.964e3dbf.chunk.js.map",
     "index.html": "/minipupperworkshop26/index.html",
-    "static/css/main.8e52e997.chunk.css.map": "/minipupperworkshop26/static/css/main.8e52e997.chunk.css.map",
-    "static/js/2.b7e2d6c6.chunk.js.LICENSE.txt": "/minipupperworkshop26/static/js/2.b7e2d6c6.chunk.js.LICENSE.txt"
+    "static/css/main.c835d4ff.chunk.css.map": "/minipupperworkshop26/static/css/main.c835d4ff.chunk.css.map",
+    "static/js/2.964e3dbf.chunk.js.LICENSE.txt": "/minipupperworkshop26/static/js/2.964e3dbf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e2881ff0.js",
-    "static/js/2.b7e2d6c6.chunk.js",
-    "static/css/main.8e52e997.chunk.css",
-    "static/js/main.bd998e3f.chunk.js"
+    "static/js/2.964e3dbf.chunk.js",
+    "static/css/main.c835d4ff.chunk.css",
+    "static/js/main.7541738b.chunk.js"
   ]
 }
